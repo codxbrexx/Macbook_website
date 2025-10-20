@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import useMacbookStore from "../store";
 import clsx from "clsx";
 import {Canvas} from "@react-three/fiber";
@@ -50,9 +51,10 @@ const ProductViewer = () => {
             </div>
 
             <Canvas id="canvas" camera={{ position: [0, 2, 5], fov: 50, near: 0.1, far: 100}}>
-                <StudioLights />
-
-                <ModelSwitcher scale={isMobile ? scale - 0.03 : scale} isMobile={isMobile} />
+                <Suspense fallback={null}>
+                    <StudioLights />
+                    <ModelSwitcher scale={isMobile ? scale - 0.03 : scale} isMobile={isMobile} />
+                </Suspense>
             </Canvas>
         </section>
     )
