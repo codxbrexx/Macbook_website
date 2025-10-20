@@ -128,12 +128,16 @@ const footerLinks = [
     { label: "Site Map", link: "#" },
 ];
 
+
 export {
     features,
     featureSequence,
     footerLinks,
     navLinks,
+    navLinks as navLists,
     noChangeParts,
     performanceImages,
     performanceImgPositions,
 };
+
+export const lavlinka = navLinks;

@@ -1,6 +1,8 @@
 import {footerLinks} from "../constants/index.js";
 
 const Footer = () => {
+    // ...existing code...
+    
     return (
         <footer>
             <div className="info">
