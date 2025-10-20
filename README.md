@@ -1,16 +1,75 @@
-# React + Vite
+# MacBook Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, interactive MacBook showcase website built with React, Three.js, and GSAP animations.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Interactive 3D MacBook models
+- Smooth scroll animations with GSAP
+- Responsive design with Tailwind CSS
+- Product viewer with model switching
+- Performance metrics showcase
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** - UI framework
+- **Vite** - Build tool
+- **Three.js & React Three Fiber** - 3D rendering
+- **GSAP** - Animations
+- **Tailwind CSS** - Styling
+- **Zustand** - State management
 
-## Expanding the ESLint configuration
+## 📦 Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# Clone the repository
+git clone https://github.com/codxbrexx/Macbook_website.git
+
+# Navigate to project directory
+cd Macbook_website
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+```
+
+## 🌐 Deployment
+
+This project is automatically deployed to GitHub Pages using GitHub Actions.
+
+### Manual Deployment Steps:
+
+1. **Enable GitHub Pages:**
+   - Go to your repository settings
+   - Navigate to **Pages** section
+   - Under "Build and deployment", select **GitHub Actions** as the source
+
+2. **Push to main branch:**
+   ```bash
+   git add .
+   git commit -m "Deploy to GitHub Pages"
+   git push origin main
+   ```
+
+3. **Access your site:**
+   - Your site will be available at: `https://codxbrexx.github.io/Macbook_website/`
+
+## 📜 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## 🔧 Configuration
+
+The project uses Vite with the following plugins:
+- `@vitejs/plugin-react` - React support with Fast Refresh
+- `@tailwindcss/vite` - Tailwind CSS integration
+
+## 📝 License
+
+This project is open source and available under the MIT License.
+
