@@ -16,10 +16,11 @@ import {Color} from "three";
 
 export default function MacbookModel(props) {
     const { color, texture } = useMacbookStore();
-    const { nodes, materials, scene } = useGLTF('/models/macbook-transformed.glb')
+    const { nodes, materials, scene } = useGLTF(`${import.meta.env.BASE_URL}models/macbook-transformed.glb`)
 
     // Use video texture with proper error handling
-    const screen = useVideoTexture(texture || '/videos/feature-1.mp4', {
+    const videoPath = texture ? (texture.startsWith('/') ? `${import.meta.env.BASE_URL}${texture.slice(1)}` : texture) : `${import.meta.env.BASE_URL}videos/feature-1.mp4`;
+    const screen = useVideoTexture(videoPath, {
         unsuspend: 'canplay',
         muted: true,
         loop: true,
@@ -66,4 +67,3 @@ export default function MacbookModel(props) {
 }
 
 useGLTF.preload(`${import.meta.env.BASE_URL}models/macbook-transformed.glb`)
-useGLTF.preload('/models/macbook-transformed.glb')

@@ -1,13 +1,12 @@
 import {footerLinks} from "../constants/index.js";
 
 const Footer = () => {
-    // ...existing code...
     
     return (
         <footer>
             <div className="info">
                 <p>More ways to shop: Find an Apple Store or other retailer near you. Or call 000800 040 1966.</p>
-                <img src="/logo.svg" alt ="Apple logo"/>
+                <img src={`${import.meta.env.BASE_URL}logo.svg`} alt ="Apple logo"/>
             </div>
 
             <hr />
