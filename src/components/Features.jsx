@@ -54,7 +54,7 @@ const ModelScroll = () => {
             }
         })
 
-        // 3D spin animation
+        // 3D SPIN
         if(groupRef.current) {
             modelTimeline.to(groupRef.current.rotation, { y: Math.PI * 2, ease: 'power1.inOut'})
         }
