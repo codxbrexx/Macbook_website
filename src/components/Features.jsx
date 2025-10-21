@@ -82,34 +82,12 @@ const ModelScroll = () => {
             <h1 className="text-white text-3xl uppercase">Loading...</h1>
           </Html>
         }
-
-        // Content & Texture Sync
-        const BASE_URL = import.meta.env.BASE_URL;
-        timeline
-            .call(() => setTexture(`${BASE_URL}videos/feature-1.mp4`))
-            .to('.box1', { opacity: 1, y: 0, delay: 1 })
-
-            .call(() => setTexture(`${BASE_URL}videos/feature-2.mp4`))
-            .to('.box2', { opacity: 1, y: 0 })
-
-            .call(() => setTexture(`${BASE_URL}videos/feature-3.mp4`))
-            .to('.box3', { opacity: 1, y: 0 })
-
-            .call(() => setTexture(`${BASE_URL}videos/feature-4.mp4`))
-            .to('.box4', { opacity: 1, y: 0})
-
-            .call(() => setTexture(`${BASE_URL}videos/feature-5.mp4`))
-            .to('.box5', { opacity: 1, y: 0 })
-    }, []);
-
-    return (
-        <group ref={groupRef}>
-            <Suspense fallback={<Html><h1 className="text-white text-3xl uppercase">Loading...</h1></Html>}>
-                <MacbookModel scale={isMobile ? 0.05 : 0.08} position={[0, -1, 0]} />
-            </Suspense>
-        </group>
-    )
-}
+      >
+        <MacbookModel scale={isMobile ? 0.05 : 0.08} position={[0, -1, 0]} />
+      </Suspense>
+    </group>
+  );
+};
 
 const Features = () => {
   return (
