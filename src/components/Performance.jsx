@@ -13,7 +13,6 @@ const Performance = () => {
             const sectionEl = sectionRef.current;
             if (!sectionEl) return;
 
-            // Text Animation
             gsap.fromTo(
                 ".content p",
                 { opacity: 0, y: 10 },
@@ -33,7 +32,6 @@ const Performance = () => {
 
             if (isMobile) return;
 
-            // Image Positioning Timeline
             const tl = gsap.timeline({
                 defaults: { duration: 2, ease: "power1.inOut", overwrite: "auto" },
                 scrollTrigger: {
@@ -45,7 +43,6 @@ const Performance = () => {
                 },
             });
 
-            // Position Each Performance Image
             performanceImgPositions.forEach((item) => {
                 if (item.id === "p5") return;
 
