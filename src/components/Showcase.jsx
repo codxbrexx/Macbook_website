@@ -3,7 +3,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const Showcase = () => {
-  const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
+    // ...existing code...
+    const isTablet = useMediaQuery({ query: '(max-width: 1024px)'});
 
   useGSAP(() => {
     if (!isTablet) {
@@ -25,14 +26,14 @@ const Showcase = () => {
     }
   }, [isTablet]);
 
-  return (
-    <section id="showcase">
-      <div className="media">
-        <video src="/videos/game.mp4" loop muted autoPlay playsInline />
-        <div className="mask">
-          <img src="/mask-logo.svg" />
-        </div>
-      </div>
+    return (
+        <section id="showcase">
+            <div className="media">
+                <video src={`${import.meta.env.BASE_URL}videos/game.mp4`} loop muted autoPlay playsInline />
+                <div className="mask">
+                    <img src={`${import.meta.env.BASE_URL}mask-logo.svg`} />
+                </div>
+            </div>
 
       <div className="content">
         <div className="wrapper">

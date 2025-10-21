@@ -15,12 +15,21 @@ import {noChangeParts} from "../../constants/index.js";
 import {Color} from "three";
 
 export default function MacbookModel(props) {
-    const { color, texture, } = useMacbookStore();
-  const { nodes, materials, scene} = useGLTF('/models/macbook-transformed.glb')
+    const { color, texture } = useMacbookStore();
+    const { nodes, materials, scene } = useGLTF(`${import.meta.env.BASE_URL}models/macbook-transformed.glb`)
 
-    const screen = useVideoTexture(texture)
+    // Use video texture with proper error handling
+    const videoPath = texture ? (texture.startsWith('/') ? `${import.meta.env.BASE_URL}${texture.slice(1)}` : texture) : `${import.meta.env.BASE_URL}videos/feature-1.mp4`;
+    const screen = useVideoTexture(videoPath, {
+        unsuspend: 'canplay',
+        muted: true,
+        loop: true,
+        start: true,
+    });
 
     useEffect(() => {
+        if (!scene) return;
+        
         scene.traverse((child) => {
             if (child.isMesh) {
                 if (!noChangeParts.includes(child.name)) {
@@ -50,11 +59,11 @@ export default function MacbookModel(props) {
       <mesh geometry={nodes.Object_96.geometry} material={materials.PaletteMaterial003} rotation={[Math.PI / 2, 0, 0]} />
       <mesh geometry={nodes.Object_107.geometry} material={materials.JvMFZolVCdpPqjj} rotation={[Math.PI / 2, 0, 0]} />
       <mesh geometry={nodes.Object_123.geometry} rotation={[Math.PI / 2, 0, 0]}>
-          <meshBasicMaterial map={screen} />
+          <meshBasicMaterial map={screen} toneMapped={false} />
       </mesh>
       <mesh geometry={nodes.Object_127.geometry} material={materials.ZCDwChwkbBfITSW} rotation={[Math.PI / 2, 0, 0]} />
     </group>
   )
 }
 
-useGLTF.preload('/models/macbook-transformed.glb')
+useGLTF.preload(`${import.meta.env.BASE_URL}models/macbook-transformed.glb`)
