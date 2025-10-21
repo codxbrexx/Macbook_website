@@ -1,4 +1,4 @@
-import {footerLinks} from "../constants/index.js";
+import { footerLinks } from "../constants/index.js";
 
 const Footer = () => {
     
@@ -9,20 +9,20 @@ const Footer = () => {
                 <img src={`${import.meta.env.BASE_URL}logo.svg`} alt ="Apple logo"/>
             </div>
 
-            <hr />
+      <hr />
 
-            <div className="links">
-                <p>Copyright © 2024 Apple Inc. All rights reserved.</p>
+      <div className="links">
+        <p>Copyright © 2024 Apple Inc. All rights reserved.</p>
 
-                <ul>
-                    {footerLinks.map(({label, link }) => (
-                        <li key={label}>
-                            <a href={link}>{label}</a>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </footer>
-    )
-}
-export default Footer
+        <ul>
+          {footerLinks.map(({ label, link }) => (
+            <li key={label}>
+              <a href={link}>{label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </footer>
+  );
+};
+export default Footer;
